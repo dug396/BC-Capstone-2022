@@ -13,10 +13,10 @@ TagManager:
   - UI
   - Left Hand Physics
   - Right Hand Physics
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Grabbable
+  - Level
+  - Non-Interactive-State_Grabbable
   - 
   - 
   - 
