@@ -1382,8 +1382,8 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.5
   m_SuspensionSpring:
-    spring: 35000
-    damper: 4500
+    spring: 90000
+    damper: 9000
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
@@ -4144,8 +4144,8 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.5
   m_SuspensionSpring:
-    spring: 35000
-    damper: 4500
+    spring: 90000
+    damper: 9000
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
@@ -6174,6 +6174,7 @@ GameObject:
   - component: {fileID: 274719267546474315}
   - component: {fileID: 2606186696529728385}
   - component: {fileID: 5290556221337512126}
+  - component: {fileID: 3996054331586769676}
   m_Layer: 0
   m_Name: AccessBus
   m_TagString: Untagged
@@ -6262,8 +6263,31 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 9.067258, y: 3.8148806, z: 3.200672}
-  m_Center: {x: 4.5476704, y: 1.7821969, z: 2.4818072}
+  m_Size: {x: 8.915291, y: 3.162449, z: 3.2006724}
+  m_Center: {x: 4.5269566, y: 1.9834833, z: 2.4818072}
+--- !u!114 &3996054331586769676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4552000740179014228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f22eb1ef47ba6f0458a3441571ea40f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frontLeftWheelCollider: {fileID: 6404001351094926675}
+  frontRightWheelCollider: {fileID: 8782543313673323483}
+  rearLeftWheelCollider: {fileID: 2822117636897773685}
+  rearRightWheelCollider: {fileID: 476254893627704395}
+  frontLeftWheelTransform: {fileID: 3648175910131838427}
+  frontRightWheelTransform: {fileID: 3689490463662588218}
+  rearLeftWheelTransform: {fileID: 4020082599817723382}
+  rearRightWheelTransform: {fileID: 7251429486321178007}
+  maxSteeringAngle: 30
+  motorForce: 1000
+  brakeForce: 3000
 --- !u!1 &4728609645471962102
 GameObject:
   m_ObjectHideFlags: 0
@@ -6305,8 +6329,8 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.5
   m_SuspensionSpring:
-    spring: 35000
-    damper: 4500
+    spring: 90000
+    damper: 9000
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
@@ -7404,8 +7428,8 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.5
   m_SuspensionSpring:
-    spring: 35000
-    damper: 4500
+    spring: 90000
+    damper: 9000
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
