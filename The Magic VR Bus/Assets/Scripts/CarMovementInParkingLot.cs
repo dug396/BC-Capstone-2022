@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Car_2_ParkingLotMovement : MonoBehaviour
+public class CarMovementInParkingLot : MonoBehaviour
 {
     // Reference the objects Rigidbody component
     public Rigidbody _rb;
@@ -11,7 +11,7 @@ public class Car_2_ParkingLotMovement : MonoBehaviour
     // Variable to save the original position
     private Vector3 originalPosition;
 
-    // Start is called before the first frame update
+    // Use for initialization
     void Start()
     {
         // Get the original position
@@ -23,10 +23,10 @@ public class Car_2_ParkingLotMovement : MonoBehaviour
     {
         // Start the car moving
         // _rb.AddForce(forwardSpeed * Time.deltaTime, 0, 0);
-        _rb.velocity = new Vector3(-forwardSpeed , 0, 0);
+        _rb.velocity = new Vector3(forwardSpeed , 0, 0);
 
         // Return to the original position so the car keeps looping
-        if(transform.position.x < -18)
+        if(transform.position.x > 26)
         {
             transform.position = originalPosition;
         }
