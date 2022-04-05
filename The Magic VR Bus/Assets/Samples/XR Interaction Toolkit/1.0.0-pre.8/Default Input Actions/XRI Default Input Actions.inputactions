@@ -154,6 +154,14 @@
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Menu",
+                    "type": "Button",
+                    "id": "ff24ca5d-dca3-4127-acd8-97f1bf233e07",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -783,6 +791,39 @@
                     "action": "Translate Anchor",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "60eee7ab-9f7c-415b-83c9-e087a00a0860",
+                    "path": "<XRController>{LeftHand}/menu",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "Menu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1b9ecce5-42c6-42a0-a089-70df312d31ac",
+                    "path": "<XRSimulatedController>{LeftHand}/menuButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Menu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c0901db4-af15-4ea4-a1b1-8c8dbce67747",
+                    "path": "<XRInputV1::Oculus::OculusTouchControllerLeft>{LeftHand}/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Menu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
