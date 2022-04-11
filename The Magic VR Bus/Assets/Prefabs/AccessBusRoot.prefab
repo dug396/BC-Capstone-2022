@@ -178,6 +178,7 @@ GameObject:
   - component: {fileID: 3136400146725026931}
   - component: {fileID: 6637961628023397457}
   - component: {fileID: 8091469367887124041}
+  - component: {fileID: 5365960815325199618}
   m_Layer: 0
   m_Name: Left.Door.Panel
   m_TagString: Untagged
@@ -279,6 +280,42 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.63722867, y: 2.267712, z: 0.034432884}
   m_Center: {x: 0.31861624, y: 1.133856, z: 0.017217396}
+--- !u!59 &5365960815325199618
+HingeJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 186768913793157075}
+  m_ConnectedBody: {fileID: 6729098494659173724}
+  m_ConnectedArticulationBody: {fileID: 0}
+  m_Anchor: {x: 0, y: 1.05, z: 0}
+  m_Axis: {x: 0, y: 1, z: 0}
+  m_AutoConfigureConnectedAnchor: 1
+  m_ConnectedAnchor: {x: -3.0397062, y: 0.31703043, z: 4.0945663}
+  m_UseSpring: 0
+  m_Spring:
+    spring: 0
+    damper: 0
+    targetPosition: 0
+  m_UseMotor: 0
+  m_Motor:
+    targetVelocity: 0
+    force: 0
+    freeSpin: 0
+  m_UseLimits: 0
+  m_Limits:
+    min: 0
+    max: 0
+    bounciness: 0
+    bounceMinVelocity: 0.2
+    contactDistance: 0
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
 --- !u!1 &261674201865020495
 GameObject:
   m_ObjectHideFlags: 0
@@ -4505,6 +4542,7 @@ GameObject:
   - component: {fileID: 4594276157663025894}
   - component: {fileID: 5842478450981117344}
   - component: {fileID: 4776254378991245433}
+  - component: {fileID: 4635007219327432202}
   m_Layer: 0
   m_Name: Right.Door.Panel
   m_TagString: Untagged
@@ -4606,6 +4644,42 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.63722867, y: 2.267712, z: 0.034432884}
   m_Center: {x: 0.31861433, y: 1.133856, z: 0.017217873}
+--- !u!59 &4635007219327432202
+HingeJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3099469298064716857}
+  m_ConnectedBody: {fileID: 6729098494659173724}
+  m_ConnectedArticulationBody: {fileID: 0}
+  m_Anchor: {x: 0, y: 1.1, z: 0}
+  m_Axis: {x: 0, y: 1, z: 0}
+  m_AutoConfigureConnectedAnchor: 1
+  m_ConnectedAnchor: {x: -3.009706, y: 0.36703038, z: 2.769165}
+  m_UseSpring: 0
+  m_Spring:
+    spring: 0
+    damper: 0
+    targetPosition: 0
+  m_UseMotor: 0
+  m_Motor:
+    targetVelocity: 0
+    force: 0
+    freeSpin: 0
+  m_UseLimits: 0
+  m_Limits:
+    min: 0
+    max: 0
+    bounciness: 0
+    bounceMinVelocity: 0.2
+    contactDistance: 0
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
 --- !u!1 &3109430342445086087
 GameObject:
   m_ObjectHideFlags: 0
@@ -9558,6 +9632,7 @@ GameObject:
   - component: {fileID: 8662445740681457500}
   - component: {fileID: 5968428349058115989}
   - component: {fileID: 5530519396572154279}
+  - component: {fileID: 4933459705044867521}
   m_Layer: 0
   m_Name: Rear.Right.Fold.Door
   m_TagString: Untagged
@@ -9649,6 +9724,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4933459705044867521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7405844667609170913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06b8f371983e7b849828554b03bfdea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
 --- !u!1 &7413531262184694774
 GameObject:
   m_ObjectHideFlags: 0
