@@ -1802,7 +1802,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1124717560489426444}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 12.300855, y: 0.96084833, z: 11.723759}
+  m_LocalPosition: {x: 12.300855, y: 0.96084833, z: 11.98}
   m_LocalScale: {x: 16.897297, y: 16.897297, z: 16.897297}
   m_Children:
   - {fileID: 5143517569839512928}
@@ -9662,7 +9662,6 @@ GameObject:
   - component: {fileID: 1659862575549916726}
   - component: {fileID: 2258552374705878338}
   - component: {fileID: 7612648898267829187}
-  - component: {fileID: 5015275699885175865}
   m_Layer: 0
   m_Name: Ramp
   m_TagString: Untagged
@@ -9765,42 +9764,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!59 &5015275699885175865
-HingeJoint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7413531262184694774}
-  m_ConnectedBody: {fileID: 6729098494659173724}
-  m_ConnectedArticulationBody: {fileID: 0}
-  m_Anchor: {x: 0.036, y: 0, z: 0.1}
-  m_Axis: {x: 1, y: 0, z: 0}
-  m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -2.7109551, y: -0.59683394, z: 3.4200573}
-  m_UseSpring: 0
-  m_Spring:
-    spring: 0
-    damper: 0
-    targetPosition: 0
-  m_UseMotor: 0
-  m_Motor:
-    targetVelocity: 30
-    force: 10
-    freeSpin: 0
-  m_UseLimits: 1
-  m_Limits:
-    min: -90
-    max: 0
-    bounciness: 0
-    bounceMinVelocity: 0.2
-    contactDistance: 0
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
 --- !u!1 &7440113790707979620
 GameObject:
   m_ObjectHideFlags: 0
@@ -11985,8 +11948,9 @@ GameObject:
   - component: {fileID: 8745751832067335885}
   - component: {fileID: 9087016568848501020}
   - component: {fileID: 8523613880330722312}
+  - component: {fileID: 8932131616591979651}
   m_Layer: 0
-  m_Name: Group 270
+  m_Name: LiftAutomationGroup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12068,6 +12032,25 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &8932131616591979651
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8801618132633736663}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b2d9fac7efd64444d9fdc504d90b3ae2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8819931590467330447
 GameObject:
   m_ObjectHideFlags: 0
