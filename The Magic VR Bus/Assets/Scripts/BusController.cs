@@ -24,55 +24,55 @@ public class BusController : MonoBehaviour
     public float brakeForce = 0f;
 
 
-    private void FixedUpdate()
-    {
-        GetInput();
-        HandleMotor();
-        HandleSteering();
-        UpdateWheels();
-    }
+    // private void FixedUpdate()
+    // {
+    //     GetInput();
+    //     HandleMotor();
+    //     HandleSteering();
+    //     UpdateWheels();
+    // }
 
-    private void GetInput()
-    {
-        horizontalInput = Input.GetAxis("Horizontal");
-        verticalInput = Input.GetAxis("Vertical");
-        isBreaking = Input.GetKey(KeyCode.Space);
-    }
+    // private void GetInput()
+    // {
+    //     horizontalInput = Input.GetAxis("Horizontal");
+    //     verticalInput = Input.GetAxis("Vertical");
+    //     isBreaking = Input.GetKey(KeyCode.Space);
+    // }
 
-    private void HandleSteering()
-    {
-        steerAngle = maxSteeringAngle * horizontalInput;
-        frontLeftWheelCollider.steerAngle = steerAngle;
-        frontRightWheelCollider.steerAngle = steerAngle;
-    }
+    // private void HandleSteering()
+    // {
+    //     steerAngle = maxSteeringAngle * horizontalInput;
+    //     frontLeftWheelCollider.steerAngle = steerAngle;
+    //     frontRightWheelCollider.steerAngle = steerAngle;
+    // }
 
-    private void HandleMotor()
-    {
-        frontLeftWheelCollider.motorTorque = verticalInput * motorForce;
-        frontRightWheelCollider.motorTorque = verticalInput * motorForce;
+    // private void HandleMotor()
+    // {
+    //     frontLeftWheelCollider.motorTorque = verticalInput * motorForce;
+    //     frontRightWheelCollider.motorTorque = verticalInput * motorForce;
 
-        brakeForce = isBreaking ? 3000f : 0f;
-        frontLeftWheelCollider.brakeTorque = brakeForce;
-        frontRightWheelCollider.brakeTorque = brakeForce;
-        rearLeftWheelCollider.brakeTorque = brakeForce;
-        rearRightWheelCollider.brakeTorque = brakeForce;
-    }
+    //     brakeForce = isBreaking ? 3000f : 0f;
+    //     frontLeftWheelCollider.brakeTorque = brakeForce;
+    //     frontRightWheelCollider.brakeTorque = brakeForce;
+    //     rearLeftWheelCollider.brakeTorque = brakeForce;
+    //     rearRightWheelCollider.brakeTorque = brakeForce;
+    // }
 
-    private void UpdateWheels()
-    {
-        UpdateWheelPos(frontLeftWheelCollider, frontLeftWheelTransform);
-        UpdateWheelPos(frontRightWheelCollider, frontRightWheelTransform);
-        UpdateWheelPos(rearLeftWheelCollider, rearLeftWheelTransform);
-        UpdateWheelPos(rearRightWheelCollider, rearRightWheelTransform);
-    }
+    // private void UpdateWheels()
+    // {
+    //     UpdateWheelPos(frontLeftWheelCollider, frontLeftWheelTransform);
+    //     UpdateWheelPos(frontRightWheelCollider, frontRightWheelTransform);
+    //     UpdateWheelPos(rearLeftWheelCollider, rearLeftWheelTransform);
+    //     UpdateWheelPos(rearRightWheelCollider, rearRightWheelTransform);
+    // }
 
-    private void UpdateWheelPos(WheelCollider wheelCollider, Transform trans)
-    {
-        Vector3 pos;
-        Quaternion rot;
-        wheelCollider.GetWorldPose(out pos, out rot);
-        trans.rotation = rot;
-        trans.position = pos;
-    }
+    // private void UpdateWheelPos(WheelCollider wheelCollider, Transform trans)
+    // {
+    //     Vector3 pos;
+    //     Quaternion rot;
+    //     wheelCollider.GetWorldPose(out pos, out rot);
+    //     trans.rotation = rot;
+    //     trans.position = pos;
+    // }
 
 }
