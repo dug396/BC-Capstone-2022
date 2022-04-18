@@ -388,6 +388,26 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1787912999}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1222142290 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3539060172621386586, guid: 1a03cf361426bd44da497ebc2aac1b2c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1787912999}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1222142292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222142290}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f55230e9cc39ce44db9bbf8d434bed84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LiftAutomationGroup: {fileID: 838782849}
+  Door: {fileID: 1973618953}
 --- !u!1001 &1379774570
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -469,10 +489,20 @@ PrefabInstance:
       propertyPath: LiftAutomationGroup
       value: 
       objectReference: {fileID: 838782849}
+    - target: {fileID: 2258552374705878338, guid: 1a03cf361426bd44da497ebc2aac1b2c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2372024348785852503, guid: 1a03cf361426bd44da497ebc2aac1b2c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3977503278845779846, guid: 1a03cf361426bd44da497ebc2aac1b2c,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.4013178
+      value: 1.5834213
       objectReference: {fileID: 0}
     - target: {fileID: 3977503278845779846, guid: 1a03cf361426bd44da497ebc2aac1b2c,
         type: 3}
@@ -482,7 +512,7 @@ PrefabInstance:
     - target: {fileID: 3977503278845779846, guid: 1a03cf361426bd44da497ebc2aac1b2c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.61
+      value: 0.11
       objectReference: {fileID: 0}
     - target: {fileID: 3977503278845779846, guid: 1a03cf361426bd44da497ebc2aac1b2c,
         type: 3}
@@ -503,6 +533,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5968428349058115989, guid: 1a03cf361426bd44da497ebc2aac1b2c,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5968428349058115989, guid: 1a03cf361426bd44da497ebc2aac1b2c,
         type: 3}
@@ -576,6 +611,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a03cf361426bd44da497ebc2aac1b2c, type: 3}
+--- !u!1 &1973618953 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7405844667609170913, guid: 1a03cf361426bd44da497ebc2aac1b2c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1787912999}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2116971666
 GameObject:
   m_ObjectHideFlags: 0
