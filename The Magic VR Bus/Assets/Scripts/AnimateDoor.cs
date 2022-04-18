@@ -30,51 +30,34 @@ public class AnimateDoor : MonoBehaviour
     // }
     
     
-    private void Validation (string Loop=null){      
+    private void Validation (string Loop=null){  
         
-
         for (int i = 0; i < isCheckedValue.Length; i++)
-        {
-            
+        {            
             if (_liftAdmin.GetBool (isCheckedValue[i])){
             Loop = Loop + $"===> Bool {isCheckedValue[i]} is True |";
-              //Debug.Log ($"===> Bool {isCheckedValue[i]} is True");
-
             } else {
-                //Debug.Log ($"===> Bool {isCheckedValue[i]} is False");
                 Loop = Loop + $"===> Bool {isCheckedValue[i]} is False |";
             }
-        }
-        
-        Debug.Log ($"===> Final  {Loop}");
-
-        
+        }        
+        Debug.Log ($"===> Final  {Loop}");        
     }
     
-    private void OnTriggerEnter(Collider other) {
+    private void OnTriggerEnter(Collider other) {        
         
-          //Debug.Log("OnTrigger Door Testing");
-        if (isDebug) Debug.Log ($"ontrigger enter object tag ---{other.tag}");
-        if (isDebug) Debug.Log($" Accessing the following---  {other.name} end");
-         if (isDebug) Debug.Log($"collided with {other.gameObject.name}");
+        if (isDebug) Debug.Log ($"OnTrigger Door Testing. Enter object tag ---{other.tag} | Accessing {other.name}. | collided with {other.gameObject.name}. ");        
         if (other.tag==("Player")){
             _atliftRamp = true;
             _doorAdmin.SetBool ("isOpening", true);
             StartCoroutine (OpenLift ());
-            Debug.Log("OnTrigger Door Opening");
-
+            if (isDebug) Debug.Log("OnTrigger Door Opening");
         }   
-        if (_doorAdmin.GetBool ("isOpening")) {
-            if (isDebug) Debug.Log($" Yes, it is true!  {other.name} end");
-         }
-
           Validation ("OnTriggerEnter"); 
     }
     
      private void OnTriggerExit(Collider other) {
         if (isDebug) Debug.Log ($"ontrigger Exit object tag ---{other.tag}");
-         if (other.tag==("Player")){
-
+         if (other.tag==("Player") && _atliftRamp){
             //_liftAdmin.SetBool ("isLiftClosing",true);
             _liftAdmin.SetBool ("isOpening",false);
             _liftAdmin.SetBool ("IsLoading",false);
@@ -106,14 +89,13 @@ public class AnimateDoor : MonoBehaviour
     }
 
     IEnumerator CloseDoor (){
-        Debug.Log($"CloseDoor - Started Coroutine at timestamp : {Time.time}.");       
+        if (isDebug) Debug.Log($"CloseDoor - Started Coroutine at timestamp : {Time.time}.");     
 
         //yield on a new YieldInstruction that waits for 3 seconds.
         yield return new WaitForSeconds(3);
 
          _liftAdmin.SetBool ("isLiftClosing",true);
-        yield return new WaitForSeconds(3);
-      
+        yield return new WaitForSeconds(3);      
         _doorAdmin.SetBool ("isOpening",false);
         _liftAdmin.SetBool ("isLiftClosing",false);
         //After we have waited 5 seconds print the time again.
@@ -125,7 +107,7 @@ public class AnimateDoor : MonoBehaviour
                 isOpen="false";
                 //_liftAdmin.SetBool ("isLiftClosing",true);
             } 
-       Debug.Log($"CloseDoor - Finished Coroutine at timestamp : {Time.time} and ramp closing is {isOpen}" );             
+       if (isDebug) Debug.Log($"CloseDoor - Finished Coroutine at timestamp : {Time.time} and ramp closing is {isOpen}" );             
         
     }
     IEnumerator OpenLift (){

@@ -475,7 +475,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 1148505706734451948, guid: 3cab01ce44f20454dabf99640c1e6cb8,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 14
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1148505706734451948, guid: 3cab01ce44f20454dabf99640c1e6cb8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3cab01ce44f20454dabf99640c1e6cb8, type: 3}
 --- !u!1001 &1787912999
 PrefabInstance:
@@ -544,6 +550,11 @@ PrefabInstance:
       propertyPath: m_DynamicOccludee
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6729098494659173724, guid: 1a03cf361426bd44da497ebc2aac1b2c,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7405844667609170913, guid: 1a03cf361426bd44da497ebc2aac1b2c,
         type: 3}
       propertyPath: m_IsActive
@@ -609,7 +620,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: AccessBusRoot
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5960529655602486393, guid: 1a03cf361426bd44da497ebc2aac1b2c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1a03cf361426bd44da497ebc2aac1b2c, type: 3}
 --- !u!1 &1973618953 stripped
 GameObject:
