@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dev Playground (Internal Use Only).unity
     guid: f2fe0292199b52e4186cab557f330f7e
+  - enabled: 1
+    path: Assets/Scenes/Maze Testing.unity
+    guid: 3c65350ec53ce574abbf30b33f94f336
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260,
       type: 2}
