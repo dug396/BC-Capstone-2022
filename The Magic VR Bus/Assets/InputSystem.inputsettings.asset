@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: InputSystem.inputsettings
   m_EditorClassIdentifier: 
   m_SupportedDevices:
+  - OculusTouchController
+  - XRController
   - Keyboard
   - Mouse
   m_UpdateMode: 1
