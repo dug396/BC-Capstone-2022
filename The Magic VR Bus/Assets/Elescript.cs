@@ -25,7 +25,12 @@ public Camera fpsCam;
         
     }
 
-
+    IEnumerator MoveElevator(){
+     isRising = true;
+     elevator.GetComponent<Animator>().Play("ElLift");
+     yield return new WaitForSecondsRealtime(5);
+     Debug.Log ($"Time wait is {Time.time}");
+    }
 
         /*
     public float health = 1f;

@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 public class PlayerMovementController : MonoBehaviour
 {
     // Start is called before the first frame update
-   [Header("Movement Settings")]
+    [Header("Movement Settings")]
     public float walkSpeed;
     public float sprintSpeed;
     public float jumpForce;
@@ -23,13 +23,16 @@ public class PlayerMovementController : MonoBehaviour
     float movementSpeed;
     float gravity;
     bool isSprinting = false;
-    
-    
-   
+
+    public GameObject elevator;
+    public bool isRising = false;
+
+
+
     void Start()
     {
         charControl = GetComponent<CharacterController>();
-        
+
         //playerInputController = FindObjectOfType<PlayerInputController>();
     }
 
@@ -44,13 +47,13 @@ public class PlayerMovementController : MonoBehaviour
         if (isInAir == false)
         {
             if (playerInputController.inputActions.Player.Jump.triggered)
-            { 
-            gravity = jumpForce * Time.deltaTime;
-            isInAir = true;
+            {
+                gravity = jumpForce * Time.deltaTime;
+                isInAir = true;
             }
         }
         #endregion
-        
+
         #region sprinting
         if (isSprinting)
         {
@@ -60,32 +63,41 @@ public class PlayerMovementController : MonoBehaviour
         {
             movementSpeed = walkSpeed;
         }
-        switch(sprintType)
+        switch (sprintType)
         {
             case SprintType.clickToSprint:
-                if(playerInputController.inputActions.Player.Sprint.triggered)
-                isSprinting = !isSprinting;    
+                if (playerInputController.inputActions.Player.Sprint.triggered)
+                    isSprinting = !isSprinting;
                 break;
             case SprintType.holdToSprint:
                 playerInputController.inputActions.Player.Sprint.performed += sprint => isSprinting = true;
                 playerInputController.inputActions.Player.Sprint.canceled += sprint => isSprinting = false;
-               
+
                 break;
 
         }
-       
+
         #endregion
-        
+
+
+        #region Elevator
+        if (playerInputController.inputActions.Player.Elevator.triggered)
+        {
+            Debug.Log($"I am jumping");
+            StartCoroutine(MoveElevator());
+        }
+        #endregion
+
         //set y rotation = camera y rotation
         transform.rotation = Quaternion.Euler(new Vector3(0, mainCamera.eulerAngles.y, 0));
-       
+
         pInput = playerInputController.inputActions.Player.Move.ReadValue<Vector2>();
-        
+
         charControl.Move(transform.right * pInput.x * movementSpeed * Time.deltaTime + transform.forward * pInput.y * movementSpeed * Time.deltaTime + gravity * transform.up * Time.deltaTime);
     }
     private void FixedUpdate()
     {
-       
+
         if (charControl.isGrounded)
         {
             isInAir = false;
@@ -93,14 +105,39 @@ public class PlayerMovementController : MonoBehaviour
         else
         {
             isInAir = true;
-            gravity += gravityScale*Physics.gravity.y*Time.deltaTime;
+            gravity += gravityScale * Physics.gravity.y * Time.deltaTime;
         }
-      
+
     }
     public enum SprintType
     {
         clickToSprint,
         holdToSprint
     }
-  
+
+    IEnumerator MoveElevator()
+    {
+
+        if (isRising)
+        {
+            elevator.GetComponent<Animator>().Play("EliBottom");
+            yield return new WaitForSecondsRealtime(10);
+            elevator.GetComponent<Animator>().Play("New State");            
+            isRising = false;
+            Debug.Log($"Time to Bottom wait is {Time.time}");
+        
+        }
+        else
+        {
+            isRising = true;
+            elevator.GetComponent<Animator>().Play("ElLift");
+            yield return new WaitForSecondsRealtime(10);
+            elevator.GetComponent<Animator>().Play("EliTop");
+            Debug.Log($"Time wait is {Time.time}");
+        }
+
+
+    }
+
+
 }
