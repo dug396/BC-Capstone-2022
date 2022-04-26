@@ -2,6 +2,7 @@
 using UnityEditor;
 using UnityEngine;
 
+// Executes the script in unity editor
 [ExecuteInEditMode]
 public class FenceLayout : MonoBehaviour
 {
@@ -21,8 +22,11 @@ public class FenceLayout : MonoBehaviour
 	public bool UseRaycast = false;
 	public float RaycastOffsetMax = 1.0f;
 	public float RaycastOffsetMin = -1.0f;
-	public int LayerMask = ~(1<<2); // Default to ignore the IgnoreRaycast layer
+	// Default value is set to ignore the IgnoreRaycast layer
+	public int LayerMask = ~(1<<2);
 
+
+	// enum to track editor mode while in unity editor
 	public enum EditMode
 	{
 		None,
@@ -32,7 +36,7 @@ public class FenceLayout : MonoBehaviour
 	private EditMode m_currentEditMode = EditMode.None;
 	private Vector3 m_mousePos;
 
-	// --------------------------------------------------------------------------
+	// Method draws objects to represent positions for point placements
 
 	private void OnDrawGizmosSelected()
 	{
@@ -82,14 +86,14 @@ public class FenceLayout : MonoBehaviour
 				}
 				if (addIdx < FencePoints.Count)
 				{
-					// Going to shift this one up.
+
 					Gizmos.DrawLine(m_mousePos, FencePoints[addIdx] + transform.position);
 				}
 			}
 		}
 	}
 
-	// --------------------------------------------------------------------------
+	// Enables edit mode script to run
 
 	public void SetEditMode(EditMode mode, Vector3 mousePos)
 	{
@@ -97,11 +101,11 @@ public class FenceLayout : MonoBehaviour
 		m_mousePos = mousePos;
 	}
 
-	// --------------------------------------------------------------------------
+	// Creates/adds a point to the scene from mouse position
 
 	public int GetAddPointIdx()
 	{
-		// First two points are simple.
+		// Selects first 2 points on the maze
 		if (FencePoints.Count == 0)
 		{
 			return 0;
@@ -114,7 +118,7 @@ public class FenceLayout : MonoBehaviour
 		{
 			Vector3 addPos = m_mousePos - transform.position;
 
-			// Find the closest point.
+			// Finds the closest point
 			int closestIdx = 0;
 			float closestDist = float.MaxValue;
 			for (int i = 0; i < FencePoints.Count; i++)
@@ -128,12 +132,12 @@ public class FenceLayout : MonoBehaviour
 				}
 			}
 
-			// Check which side it should go.
+			// Checks which side the point should join on
 			if (closestIdx == 0)
 			{
 				if (Vector3.Dot(addPos - FencePoints[0], FencePoints[1] - FencePoints[0]) > 0)
 				{
-					// In direction of second point.
+					// Selects direction of second point
 					return 1;
 				}
 				return 0;
@@ -142,7 +146,7 @@ public class FenceLayout : MonoBehaviour
 			{
 				if (Vector3.Dot(addPos - FencePoints[FencePoints.Count - 1], FencePoints[FencePoints.Count - 2] - FencePoints[FencePoints.Count - 1]) > 0)
 				{
-					// In direction of previous point.
+					// Selects direction of previous point
 					return FencePoints.Count - 1;
 				}
 				return FencePoints.Count;
@@ -155,7 +159,7 @@ public class FenceLayout : MonoBehaviour
 
 				if (Vector3.Dot(dirThis, dirPrev) > Vector3.Dot(dirThis, dirNext))
 				{
-					// In direction of previous point.
+					// Selects direction of previous point
 					return closestIdx;
 				}
 				return closestIdx + 1;
@@ -163,13 +167,13 @@ public class FenceLayout : MonoBehaviour
 		}
 	}
 
-	// --------------------------------------------------------------------------
+	// Deletes closest point from selected mouse position
 
 	public int GetDeletePointIdx()
 	{
 		Vector3 addPos = m_mousePos - transform.position;
 
-		// Only if within a few metres.
+		// Finds closest point to delete within parameters
 		int closestIdx = -1;
 		float closestDist = 10.0f;
 		for (int i = 0; i < FencePoints.Count; i++)
